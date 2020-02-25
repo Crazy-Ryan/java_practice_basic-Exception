@@ -8,7 +8,9 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+//    mavenCentral()
+//    maven { url 'https://plugins.gradle.org/m2/' }
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 }
 
 dependencies {
@@ -24,4 +26,10 @@ test {
 
 tasks.withType(JavaCompile) {
     options.encoding("UTF-8")
+}
+
+allprojects {
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    }
 }
